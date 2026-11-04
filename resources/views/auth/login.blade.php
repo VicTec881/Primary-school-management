@@ -31,14 +31,6 @@
             padding: 2.25rem 2rem;
             text-align: center;
         }
-        .quick-role-badge {
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.75rem;
-        }
-        .quick-role-badge:hover {
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
@@ -98,27 +90,8 @@
                 <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
             </button>
         </form>
-
-        <div class="mt-4 pt-3 border-top text-center">
-            <p class="text-muted small fw-semibold mb-2">Development Quick-Login Roles:</p>
-            <div class="d-flex flex-wrap gap-1 justify-content-center">
-                <span class="badge bg-dark quick-role-badge" onclick="fillCreds('admin@stjudeprimary.sc.ke', 'Admin@2026!')">Super Admin</span>
-                <span class="badge bg-primary quick-role-badge" onclick="fillCreds('headteacher@stjudeprimary.sc.ke', 'Head@2026!')">Headteacher</span>
-                <span class="badge bg-success quick-role-badge" onclick="fillCreds('bursar@stjudeprimary.sc.ke', 'Bursar@2026!')">Bursar</span>
-                <span class="badge bg-info text-dark quick-role-badge" onclick="fillCreds('registrar@stjudeprimary.sc.ke', 'Registrar@2026!')">Registrar</span>
-                <span class="badge bg-secondary quick-role-badge" onclick="fillCreds('teacher.otieno@stjudeprimary.sc.ke', 'Teacher@2026!')">Teacher</span>
-                <span class="badge bg-warning text-dark quick-role-badge" onclick="fillCreds('parent.mwangi@gmail.com', 'Parent@2026!')">Parent</span>
-            </div>
-        </div>
     </div>
 </div>
-
-<script>
-    function fillCreds(email, password) {
-        document.getElementById('email').value = email;
-        document.getElementById('password').value = password;
-    }
-</script>
 </body>
 </html>
 
