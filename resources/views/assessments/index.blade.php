@@ -249,3 +249,4 @@ function updateCbcBadge(index) {
 }
 </script>
 @endsection
+
