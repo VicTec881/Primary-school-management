@@ -140,7 +140,9 @@
                 <span class="fw-bold"><i class="bi bi-bar-chart-fill me-2 text-primary"></i>Learner Distribution by Grade</span>
             </div>
             <div class="card-body">
-                <canvas id="gradeChart" height="220"></canvas>
+                <div style="position: relative; height: 260px; width: 100%;">
+                    <canvas id="gradeChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -266,6 +268,7 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                resizeDelay: 200,
                 scales: {
                     y: {
                         beginAtZero: true,
