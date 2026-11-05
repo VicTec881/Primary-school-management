@@ -15,11 +15,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Railway terminates HTTPS at its proxy, so trust forwarded headers
+        $middleware->trustProxies(at: '*');
+
         $middleware->alias([
             'role' => RoleMiddleware::class,
             'active_user' => EnsureActiveUser::class,
         ]);
-        
+
         $middleware->web(append: [
             EnsureActiveUser::class,
         ]);
@@ -29,9 +32,3 @@ return Application::configure(basePath: dirname(__DIR__))
             fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
         );
     })->create();
-
-if (isset($_ENV['VERCEL']) || env('VERCEL')) {
-    $app->useStoragePath('/tmp/storage');
-}
-
-return $app;
